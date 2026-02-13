@@ -22,7 +22,7 @@ export default function App() {
     formData.append("image", file);
     if (mode === 'encrypt') formData.append("secret", message);
 
-    const endpoint = mode === 'encrypt' ? "http://localhost:8080/encode" : "http://localhost:8080/decode";
+    const endpoint = mode === 'encrypt' ? "https://stego-vault-ratt.onrender.com/encode" : "https://stego-vault-ratt.onrender.com/decode";
 
     try {
       if (mode === 'encrypt') {
