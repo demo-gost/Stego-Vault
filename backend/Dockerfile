@@ -1,17 +1,18 @@
-# Use a lightweight Linux image with GCC installed
+# Use a standard Linux environment with GCC
 FROM gcc:latest
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy your backend files into the container
+# Copy all backend files
 COPY . .
 
-# Compile the C++ code (using C++17)
-RUN g++ main.cpp -o stego_server -lws2_32 -std=c++17
+# Compile without the -lws2_32 flag (Linux doesn't need it)
+# We use -pthread because Linux networking often requires thread support
+RUN g++ main.cpp -o stego_server -std=c++17 -pthread -O3
 
-# Expose the port your server runs on
+# Expose the port
 EXPOSE 8080
 
-# Command to run the server
+# Start the server
 CMD ["./stego_server"]
