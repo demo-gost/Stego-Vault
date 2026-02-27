@@ -27,7 +27,7 @@ export default function App() {
       else formData.append("secret_file", secretFile);
     }
 
-    const endpoint = mode === 'encrypt' ? "http://localhost:8080/encode" : "http://localhost:8080/decode";
+    const endpoint = mode === 'encrypt' ? "https://your-app-name.onrender.com/encode" : "https://your-app-name.onrender.com/decode";
 
     try {
       const response = await axios.post(endpoint, formData, { responseType: 'blob' });
