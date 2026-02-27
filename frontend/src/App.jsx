@@ -27,7 +27,7 @@ export default function App() {
       else formData.append("secret_file", secretFile);
     }
 
-    const endpoint = mode === 'encrypt' ? "https://your-app-name.onrender.com/encode" : "https://your-app-name.onrender.com/decode";
+    const endpoint = mode === 'encrypt' ? "https://stego-vault-ratt.onrender.com/encode" : "https://stego-vault-ratt.onrender.com/decode";
 
     try {
       const response = await axios.post(endpoint, formData, { responseType: 'blob' });
