@@ -7,7 +7,7 @@ import {
   File, FileType, Eye, EyeOff, Activity, AlertCircle
 } from 'lucide-react';
 
-const API_BASE = "https://stego-vault-ratt.onrender.com/api";
+const API_BASE = "https://stego-vault-ratt.onrender.com";
 
 const getFileCategory = (file) => {
   if (!file) return null;
